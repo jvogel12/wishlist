@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 
 from pathlib import Path
 import os
+from google.oauth2 import service_account
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +26,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-w5hh__3b1*xz*&2+5fdn*-h*^6t&!a56cgna=ef@kp5vjk45)o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.getenv('GAE_INSTANCE'):
+    # app is running on GCP, so turn off debug mode
+    DEBUG = False
+else:
+    # app is not running on GCP, so turn on debug mode
+    DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,12 +82,34 @@ WSGI_APPLICATION = 'wishlist.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
+
+#Default settings - will work at App Engine GCP
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'places',
+        'USER': 'traveler',
+        'PASSWORD': os.getenv('TRAVELER_PW'),
+        'HOST': '/cloudsql/travel-wishlist-511820:us-central1:travell-wishlist',
+        'PORT': '3306',
     }
 }
+
+# connect to the same database when this code is running on our computer
+#here, need to connect via the cloud proxy
+#test if we are running locally, modify database settings to connect to the local database
+
+if not os.getenv('GAE_INSTANCE'):
+    # app is not running on GCP, so connect to the local database
+    #DATABASES['default']['HOST'] = '127.0.0.1'
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+    
 
 
 # Password validation
@@ -116,10 +146,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
-MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'www', 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if not os.getenv('GAE_INSTANCE'):
+    # app is not running on GCP, so use local static files
+    STATIC_URL = '/static/'
+    MEDIA_URL = '/media/'
+
+else:
+    # app is running on GCP, so use GCP storage for static and media files
+    STATIC_URL = f'https://storage.cloud.google.com/{GS_STATIC_FILE_BUCKET}/static/'
+    GS_STATIC_FILE_BUCKET = 'travel-wishlist-511820.appspot.com'
+
+
+    DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+    GS_BUCKET_NAME = 'wishlist-upload-images' #the media bucket name
+    MEDIA_URL = f'https://storage.cloud.google.com/{GS_BUCKET_NAME}/'
+
+
+    GS_CREDENTIALS = service_account.Credentials.from_service_account_file('travel-wishlist-511820-7f7c72575341.json')
 
 
 # Email

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "travel-wishlist-511820",
+  "private_key_id": "7f7c72575341908c886a4fcfdb233f345cb50fdb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQD3AtfJMtFZdUmI\n8pnMHiIIZno5K5Njs6i+RJFYEUslqLyHv3n3KZKD5uttOXz7qqhWnuTvCSmC/uiI\nvapPgU2/vx1EjneLhmp0rNS0LKOAlxHsHC3kqYkAXBs3zDWqZtGizM3y6AhMO1Nh\nQ/kU35bslmuwnXMauSRNfG+PsjnDqEd8B2d3E9OzSBAzOVJBrwe82I60p1HdRiqT\nNqeGtNyR12/33KqveXEe7tJoGY+ofrASr7EI+RhqhVHts5qJZxQ3aBK+WeZOF4wM\n3+TYznD4ztWhPgSStnv0yopS5wGbl8mHSYaENgBMLDrTJv+plxGGK0emN7g4vAXF\nnnvC+U5tAgMBAAECggEAIv6Ex6eqv7u9ZpNyyoIyXBz4j9o75VIcmT1pl0p2lP0/\ncxPjbuq1gSOuktN5gMYAAgA80B3s2EwjcXaSsZ97U6ultS1h2Ph6uHuLyYLRdHRH\n67q08xeO+z1moGm5PfeXF4i1sgYWtttox/eIoDZqUVZLfMKxqJrg08F0pKz2lgtH\n44iZl7Q23NeTl7gNmmrxOBt6NlCw+03rjXQTxBjE6k3YbbuXpr30aO3qPS/nbh0i\nVxkx6U3dH4yt2g832EizlKKakXAv1g58i8Opk+mluffr7gUJCdvmihknFbJxO/r1\nKmQElgjAHo6hwVap4uF8/qoIU0LPLNzU8J+59OBOWQKBgQD+l4bTNAATlDZWwfOv\n6PK6MWeA9jS88rK8b00lHJltPZZrlo+mQo8vxC+Z7XlzjOQ/L6LSI/HrZXqAxQ99\nBbpRkUEgK5aurs/G7uJU5kxYOUik6ROz6VVMyL4ugF/7K9++8pAn9WqH8c0PEJYQ\nmnlGinf22sWuMp6To6RbIfS9UwKBgQD4YJUsFdhvmXEKBz0RlC9Ti371sC1Nd6En\n8KNG0RDf1NlJw4NQpQIQfYQSxDPviDRRocDfMYBj9cEWMqqR4iQY4HjEeJ8eFV97\n5X+JvvzXHkEKq9KyoQuWtyZo1NtHZ1Aw0G55biF0cD5VNhUsfAHywbcOeaJ2aR4v\nwOdvj6iNPwKBgDvs6r1X5hS1tDyjlnp3eHq/Gj/OtActkUitYhk0LCD8eCWG4PUf\ngZiasyGmNgouxaLh0Y9pCo5/6l/ZApZI/NwqNowd9m/TkfCfVgLp2lqB0UmP2yVj\n7MIQFkPXz7/NSfMmISxmpdat4biEDO6Hjbg+65HdWN5x58WUpSEWUwclAoGBAKnK\nVI9ji6aWrUietCeNNmEVTkAkJIP9kKReAzAJAVESD0w2pFD/zA57z0qI57wKT0Gy\nosew7kTnHgzPq/y4K9b5tHUSxCtrju+CbpI6hluEKhBib1F/eA2avF4TjKceQBpu\nkebe223ewS29H/Jd/3L06++wRNhPebxJUazY9u8/AoGAOi1gIeSYTphN41GFCXcO\nulkLdE4zwLWJMYOz9BAVC8CE8GTg/j/GzxNN8zNZQI03cexpxMpq+AGWjM4NuusO\nFyPQAA5OmCy75fj/IZokqHJxPuzY6q0VCxwYzT0ZkDYPisqaTUTxjm3AarRehlsf\nk7guGHn72sxDv0b1BtYb8qQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "travel-wishlist-511820@appspot.gserviceaccount.com",
+  "client_id": "117975960595538935751",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/travel-wishlist-511820%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
